@@ -11,6 +11,7 @@ class Programacionloc extends Model
   protected $primaryKey='id';
 
   public $timestamps=false;
+
   protected $fillable =[
     'version',
     'activo',

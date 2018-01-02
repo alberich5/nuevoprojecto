@@ -56,9 +56,13 @@ Route::post('/administrador/usuario/search',['uses'=> 'administrador\UsuarioCont
 Route::get('psicologia',['uses'=>'psicologia\PsicologiaController@home']);
 Route::get('psicologia-captura',['uses'=>'psicologia\PsicologiaController@captura']);
 Route::get('psicologia-lista',['uses'=>'psicologia\PsicologiaController@lista']);
-Route::get('sucursal',['uses'=>'psicologia\PsicologiaController@sucursal']);
+
 Route::get('buscarElemento',['uses'=>'psicologia\PsicologiaController@buscarElementos']);
 Route::post('psicologia-buscarElemento',['uses'=>'psicologia\PsicologiaController@buscarElementosPost']);
+
+Route::get('sucursal',['uses'=>'psicologia\PsicologiaController@sucursal']);
+Route::get('programacion',['uses'=>'psicologia\PsicologiaController@programacionLoc']);
+Route::get('elemento',['uses'=>'psicologia\PsicologiaController@elementoPolicial']);
 
 
 //rutas nuevas de Psicologia

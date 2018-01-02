@@ -10,7 +10,7 @@ use App\Persona_fisica;
 use App\Dato_personal;
 use App\Sucursal;
 use App\Sucursal_historico;
-use App\ProgramacioLoc;
+use App\Programacionloc;
 use App\ElementoPolicialProgramacion;
 
 
@@ -30,6 +30,15 @@ class PsicologiaController extends Controller
    public function lista(){
 
     return view('Psicologia.curso.lista');
+  }
+
+  public function programacionLoc(){
+    $programacion = Programacionloc::select('id','delegacion_id','fecha','fecha_registro','imparte')->get();
+    return $programacion;
+  }
+  public function elementoPolicial(){
+    $elemento_policial = ElementoPolicialProgramacion::select('id','activo','elemento_policial_id','fecha_registro','programacion_loc_id')->get();
+    return $elemento_policial;
   }
 
   //Traer la informacio de Delegacion
