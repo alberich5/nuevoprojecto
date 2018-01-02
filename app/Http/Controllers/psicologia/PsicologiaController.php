@@ -86,7 +86,6 @@ class PsicologiaController extends Controller
        return back();
     }
 
-
   //Traer la informacion de los elementos disponibles d elas Delegaciones
   public function buscarElementos(Request $request)
   {

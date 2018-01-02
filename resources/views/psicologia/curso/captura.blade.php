@@ -16,7 +16,7 @@
 
   @include('Psicologia.curso.partials.formularioProgramacionLoc')
 
-   <button type="submit" v-on:click.prevent="mostrarModal()">MOSTRAR</button>
+   <button type="submit" v-on:click.prevent="mostrarModal()" class="btn btn-primary">MOSTRAR</button>
 
   @include('Psicologia.curso.partials.tablaElementos')
    <!-- pruebas -->
