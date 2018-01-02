@@ -53,10 +53,10 @@ class PsicologiaController extends Controller
    {
 
        $ProgramacioLoc = new Programacionloc;
-       $ProgramacioLoc->id=71;
+       $ProgramacioLoc->id=72;
        $ProgramacioLoc->version=0;
        $ProgramacioLoc->activo="true";
-       $ProgramacioLoc->delegacion_id=($request->get('sucursal'));
+       $ProgramacioLoc->delegacion_id=($request->get('delegacion'));
        $ProgramacioLoc->fecha_registro="2016-04-27 00:00:00";
        $ProgramacioLoc->numero_elementos=($request->get('numero'));
        $ProgramacioLoc->usuario_registra_id=128;
