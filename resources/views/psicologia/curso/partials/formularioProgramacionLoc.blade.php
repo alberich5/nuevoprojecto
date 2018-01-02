@@ -1,6 +1,5 @@
-{!!Form::open(array('url'=>'guardar','method'=>'POST','autocomplete'=>'off'))!!}
-<input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
-
+<form action="{{ url('guardar') }}" method="POST">
+{{ csrf_field() }}
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
                <select name="delegacion" class="form-control selectpicker" v-model="delegacionActual" >
@@ -35,4 +34,4 @@
   </div>
 </form>
 
-{!!Form::close()!!}
+</form>

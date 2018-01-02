@@ -52,7 +52,7 @@ class PsicologiaController extends Controller
   public function guardar (Request $request)
    {
 
-       $ProgramacioLoc = new ProgramacioLoc;
+       $ProgramacioLoc = new Programacionloc;
        $ProgramacioLoc->id=71;
        $ProgramacioLoc->version=0;
        $ProgramacioLoc->activo="true";
