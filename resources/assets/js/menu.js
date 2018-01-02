@@ -11,7 +11,6 @@
 				//llamada al metodo
 			},
 
-
 			data:{
 				modulos:[],
 				sucursales:[],

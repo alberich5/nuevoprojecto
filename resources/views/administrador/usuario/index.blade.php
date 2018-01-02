@@ -27,6 +27,8 @@
           </div>
 <!-- fin de pruebas -->
 
+
+
 </div>
 
 <!-- Fin del body del panel -->
@@ -65,6 +67,8 @@ $(document).ready(function(){
     });
     $("#mostrar").tooltip({
     });
+
+
 });
 
 
@@ -136,8 +140,11 @@ Vue.component('icono',{
                       timer: 2500
                     });
                 },
-                mostrarCancelar:function(){
-                    toastr.success('Eliminado');
+                mostrarModal:function(){
+
+                    $('#sucursal').modal('show');
+                $('.modal-backdrop').remove();
+
                 },
         }});
 
@@ -164,7 +171,7 @@ Vue.component('icono',{
       $(this).val(date);
     });
   }
-   
+
    var isValidDate = function(value, format) {
     format = format || false;
     // lets parse the date to the best of our knowledge
@@ -176,7 +183,7 @@ Vue.component('icono',{
 
     return isNaN(timestamp) == false;
    }
-   
+
    var parseDate = function(value) {
     var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
     if (m)
@@ -184,10 +191,10 @@ Vue.component('icono',{
 
     return value;
    }
-   
+
    bindDatePicker();
  });
 
-  
+
 </script>
 @endsection

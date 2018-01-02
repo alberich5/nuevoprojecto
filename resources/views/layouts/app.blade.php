@@ -12,11 +12,9 @@
     <link rel="stylesheet" href="{{ asset('omar/css/bootstrap.min.css') }}">
     <!-- Fontastic Custom icon font-->
 
-    <link rel="stylesheet" href="{{ asset('omar/css/fontastic.css') }}">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="{{ asset('omar/css/font-awesome.min.css') }}">
+
     <!-- Google fonts - Poppins -->
-    <link rel="stylesheet" href="{{ asset('omar/css/css.css') }}">
+
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="{{ asset('omar/css/style.default.css') }}" id="theme-stylesheet">
     <!-- Favicon-->
@@ -28,11 +26,13 @@
   <body>
     @yield('content')
     <!-- Javascript files-->
+    <script src="{{ asset('js/nieve.js') }}"></script>
     <script src="{{ asset('omar/js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('omar/js/popper.min.js') }}"> </script>
     <script src="{{ asset('omar/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('omar/js/jquery.cookie.js') }}"> </script>
     <script src="{{ asset('omar/js/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('omar/js/front.js') }}"></script>
+
   </body>
 </html>

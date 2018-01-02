@@ -10,6 +10,8 @@ use App\Persona_fisica;
 use App\Dato_personal;
 use App\Sucursal;
 use App\Sucursal_historico;
+use App\ProgramacioLoc;
+use App\ElementoPolicialProgramacion;
 
 
 class PsicologiaController extends Controller
@@ -33,9 +35,48 @@ class PsicologiaController extends Controller
   //Traer la informacio de Delegacion
    public function sucursal()
   {
-      $sucursal = Sucursal::select('id','nombre')->get();
+      $sucursal = Sucursal::select('id','nombre_sucursal')->get();
+
       return$sucursal;
   }
+
+  public function guardar (Request $request)
+   {
+
+       $ProgramacioLoc = new ProgramacioLoc;
+       $ProgramacioLoc->id=71;
+       $ProgramacioLoc->version=0;
+       $ProgramacioLoc->activo="true";
+       $ProgramacioLoc->delegacion_id=($request->get('sucursal'));
+       $ProgramacioLoc->fecha_registro="2016-04-27 00:00:00";
+       $ProgramacioLoc->numero_elementos=($request->get('numero'));
+       $ProgramacioLoc->usuario_registra_id=128;
+       $ProgramacioLoc->imparte=strtoupper($request->get('imparte'));
+       $ProgramacioLoc->fecha=($request->get('fecha'));
+       $ProgramacioLoc->save();
+
+      return back();
+   }
+
+   public function guardar2 (Request $request)
+    {
+
+      for ($i=1695; $i < 1705 ; $i++) {
+        $ElementoLoc = new ElementoPolicialProgramacion;
+        $ElementoLoc->id=$i;
+        $ElementoLoc->version=0;
+        $ElementoLoc->activo=true;
+        $ElementoLoc->elemento_policial_id=4339;
+        $ElementoLoc->fecha_registro='2018-01-01 12:12:12.827';
+        $ElementoLoc->programacion_loc_id=65;
+        $ElementoLoc->usuario_registra_id=128;
+        //dd($ElementoLoc);
+        $ElementoLoc->save();
+      }
+
+       return back();
+    }
+
 
   //Traer la informacion de los elementos disponibles d elas Delegaciones
   public function buscarElementos(Request $request)

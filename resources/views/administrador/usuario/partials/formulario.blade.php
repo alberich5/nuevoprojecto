@@ -31,7 +31,7 @@
     </div>
 
 
- 
+
     <div class="row">
         <div class=" col-sm-6 form-group">
             <div class=" input-group col-md-8">
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    
+
 
 
     <div class="row">
@@ -68,7 +68,7 @@
             <input type="submit" class="btn btn-primary btn-sm"  id="buscar" title="Buscar Elemento" value="BUSCAR">
 
             <input type="submit" class="btn btn-aceptar btn-sm" id="agregar" title="Aceptar" value="agregar" v-on:click.prevent="mostrarAgregar()">
-            <input type="submit" class="btn btn-editar btn-sm" id="editar" title="Editar" value="editar">
+            <input type="submit" class="btn btn-editar btn-sm" id="editar" v-on:click.prevent="mostrarModal()" title="Editar" value="editar">
             <input type="submit" class="btn btn-ver btn-sm" id="ver" title="Ver" value="ver">
             <input type="submit" class="btn btn-cancelar btn-sm" id="cancelar" title="cancelar" value="cancelar">
             <input type="submit" class="btn btn-eliminar btn-sm" id="eliminar" title="eliminar" value="eliminar" v-on:click.prevent="mostrarEliminar()">
