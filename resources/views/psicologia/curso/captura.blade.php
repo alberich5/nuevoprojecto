@@ -19,7 +19,6 @@
    <button type="submit" v-on:click.prevent="mostrarModal()">MOSTRAR</button>
 
   @include('Psicologia.curso.partials.tablaElementos')
-
    <!-- pruebas -->
          <div class="row">
             <div class="col-xs-12">
@@ -28,7 +27,6 @@
           </div>
 <!-- fin de pruebas -->
 </div>
-
 
 </div>
 
