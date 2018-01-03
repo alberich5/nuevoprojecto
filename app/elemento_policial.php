@@ -9,7 +9,7 @@ class elemento_policial extends Model
     //hacemos referencia al tabla que vamos a manejar
     protected $table='elemento_policial';
 
-    
+
     //se defin ela llave primaria de la tabla elemento policial
     protected $primaryKey='id';
 
@@ -102,6 +102,6 @@ class elemento_policial extends Model
 
     ];
         protected $hidden =[
-            
+
     ];
 }

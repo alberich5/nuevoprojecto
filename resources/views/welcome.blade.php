@@ -1,50 +1,102 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIPAB</title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="{{asset('css/mui/mui.css')}}">
-    <script src="//cdn.muicss.com/mui-latest/extra/mui-combined.min.js"></script>
-  </head>
-  <body id="welcome">
-    <header class="mui-appbar mui--z1">
-      <div class="mui-container">
-        <table>
-          <tr class="mui--appbar-height">
-            <td class="mui--text-title inicio" style=" width:100%;text-decoration: none; color:white;"><a href="" style="">SIPAB</a></td>
-              <a href="{{ route('login') }}" style="float: right; font-size: 1.4em; margin-top: 1.8%;">Inicio Sesion</a></td>
-            <td class="mui--text-right">
-              <ul class="mui-list--inline mui--text-body2">
-              </ul>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </header>
-    <div id="content-wrapper" class="mui--text-center">
-      <div class="mui--appbar-height"></div>
-      <br>
-      <br>
-      <div class="mui--text-display3 row wow zoomInDown">Aqui va el Texto</div>
-      <br>
-      
-      
-      <br>
-      <br>
-      <i class="fa fa-university fa-5x mui--color-pink-A100 mui--text-display3 row wow zoomIn" aria-hidden="true"></i>
-    </div>
-    <footer>
-      <div class="mui-container mui--text-center mui--text-bottom">
+<html lang="{{ app()->getLocale() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      </div>
-    </footer>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>
-      new WOW().init();
-    </script>
-  </body>
+        <title>Laravel</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+         {!! Html::style('css') !!}
+
+
+        <!-- Styles -->
+        <style>
+            html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 100;
+                height: 100vh;
+                margin: 0;
+            }
+            #welcome{
+               background-image: url("img/prueba2.jpg");
+              background-attachment: fixed;
+              background-repeat: no-repeat;
+              background-size:100% 100%;
+            }
+
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 84px;
+            }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+    <body id="welcome">
+        <div class="flex-center position-ref full-height">
+          <!--
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @if (Auth::check())
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ url('/login') }}">Login</a>
+                        <a href="{{ url('/register') }}">Register</a>
+                    @endif
+                </div>
+            @endif
+            -->
+            <div class="content">
+                <div class="title m-b-md">
+                    Psicologia
+                </div>
+
+                <div class="links">
+                    <a href="{{ url('/psicologia-captura') }}">Captura</a>
+                    <a href="{{ url('/psicologia-lista') }}">Lista</a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/local/nieve.js"></script>
+    </body>
 </html>

@@ -31,17 +31,19 @@ class PsicologiaController extends Controller
 
     return view('Psicologia.curso.lista');
   }
-
+//funcion para traer la informacion de la tabla de programacionLoc
   public function programacionLoc(){
     $programacion = Programacionloc::select('id','delegacion_id','fecha','fecha_registro','imparte')->get();
     return $programacion;
   }
+
+  //traer toda la informacion de ElementoPOlicial
   public function elementoPolicial(){
     $elemento_policial = ElementoPolicialProgramacion::select('id','activo','elemento_policial_id','fecha_registro','programacion_loc_id')->get();
     return $elemento_policial;
   }
 
-  //Traer la informacio de Delegacion
+  //Traer la informacio de la tabla sucursal
    public function sucursal()
   {
       $sucursal = Sucursal::select('id','nombre_sucursal')->get();
@@ -49,11 +51,12 @@ class PsicologiaController extends Controller
       return$sucursal;
   }
 
+//funcion para guardar la informacion que se traer del formulario y la tabla Programacion Loc
   public function guardar (Request $request)
    {
 
        $ProgramacioLoc = new Programacionloc;
-       $ProgramacioLoc->id=72;
+       $ProgramacioLoc->id=73;
        $ProgramacioLoc->version=0;
        $ProgramacioLoc->activo="true";
        $ProgramacioLoc->delegacion_id=($request->get('delegacion'));
@@ -67,6 +70,7 @@ class PsicologiaController extends Controller
       return back();
    }
 
+  //funcion para guardar en la tabla de elementopolicialloc y de otro formula+
    public function guardar2 (Request $request)
     {
 
@@ -89,20 +93,20 @@ class PsicologiaController extends Controller
   //Traer la informacion de los elementos disponibles d elas Delegaciones
   public function buscarElementos(Request $request)
   {
+
       $delegacion = $request->get('delegacion');
     //$elemento= elemento_policial::select('id','version')->take(10)->get();
-    $elemento = elemento_policial::join("persona_fisica","elemento_policial.id_persona_fisica","=","persona_fisica.id")
+    $elemento = elemento_policial::join("persona_fisica","elemento_policial.persona_fisica_id","=","persona_fisica.id")
     ->join("dato_personal","elemento_policial.id","=","dato_personal.id")
-    ->join("sucursal_historico","persona_fisica.id_dato_personal","=","sucursal_historico.id_elemento_policial")
-    ->join("sucursal","sucursal_historico.id_sucursal","=","sucursal.id")
-    ->select('elemento_policial.id','elemento_policial.status','dato_personal.nombre','dato_personal.apellido_paterno','dato_personal.apellido_materno','sucursal.nombre as delegacion','dato_personal.rfc','dato_personal.curp')
+    ->join("sucursal_historico","persona_fisica.dato_personal_id","=","sucursal_historico.elemento_policial_id")
+    ->join("sucursal","sucursal_historico.sucursal_id","=","sucursal.id")
+    ->select('elemento_policial.id','elemento_policial.status','dato_personal.nombre','dato_personal.apellido_paterno','dato_personal.apellido_materno','sucursal.nombre_sucursal as delegacion','dato_personal.rfc','dato_personal.curp')
     ->where('sucursal_historico.version','=', 0)
     //->where('elemento_policial.status','in', 'Candidato Contratado')
-    ->where('sucursal.nombre','=', $delegacion)
+    ->where('sucursal.id','=', $delegacion)
     ->orderBy('id', 'ASC')->take(15)->get();
 
 
-      $sucursal = Sucursal::select('id','nombre')->get();
       return $elemento;
   }
 }

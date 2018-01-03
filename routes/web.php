@@ -67,5 +67,7 @@ Route::get('elemento',['uses'=>'psicologia\PsicologiaController@elementoPolicial
 Route::post('guardar', 'psicologia\PsicologiaController@guardar');
 Route::post('guardar2', 'psicologia\PsicologiaController@guardar2');
 
+Route::get('buscar',['uses'=>'psicologia\PsicologiaController@buscarElementos']);
+
 
 //rutas nuevas de Psicologia

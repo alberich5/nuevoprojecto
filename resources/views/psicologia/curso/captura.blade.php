@@ -19,6 +19,21 @@
    <button type="submit" v-on:click.prevent="mostrarModal()" class="btn btn-primary">MOSTRAR</button>
 
   @include('Psicologia.curso.partials.tablaElementos')
+
+  <form action="{{ url('buscar') }}" method="GET">
+  {{ csrf_field() }}
+    <div class="form-group">
+           <select name="delegacion" class="form-control selectpicker" v-model="delegacionActual" >
+               <option v-for="sucursal in sucursales"  name="sucursal" class="lista" v-bind:value="sucursal.id">
+                  @{{ sucursal.nombre_sucursal}}
+                </option>
+            </select>
+    </div>
+    <div class="form-group">
+          <button class="btn btn-primary" type="submit">Buscar</button>
+        </div>
+  </form>
+
    <!-- pruebas -->
          <div class="row">
             <div class="col-xs-12">
