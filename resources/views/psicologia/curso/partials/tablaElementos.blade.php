@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Status</th>
+      <th>Foto</th>
       <th>Nombre</th>
       <th>apellido paterno</th>
       <th>apellido materno</th>
@@ -12,15 +12,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr v-for="elemento in elementosEncontrados">
-      <td width="10px">@{{ elemento.id }}</td>
-      <td>@{{ elemento.status }}</td>
-      <td>@{{ elemento.nombre }}</td>
-      <td>@{{ elemento.apellido_paterno }}</td>
-      <td>@{{ elemento.apellido_materno }}</td>
-      <td>@{{ elemento.delegacion }}</td>
-      <td>@{{ elemento.rfc }}</td>
-      <td>@{{ elemento.curp }}</td>
+    <tr v-for="tol in total">
+      <td width="10px">@{{ tol.id }}</td>
+      <td><img src="{{ asset('sipab/img/1.png') }}" width="80px"></td>
+      <td>@{{ tol.nombre }}</td>
+      <td>@{{ tol.apellido_paterno }}</td>
+      <td>@{{ tol.apellido_materno }}</td>
+      <td>@{{ tol.delegacion }}</td>
+      <td>@{{ tol.rfc }}</td>
+      <td>@{{ tol.curp }}</td>
     </tr>
   </tbody>
 </table>

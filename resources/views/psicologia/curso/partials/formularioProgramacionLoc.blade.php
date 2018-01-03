@@ -3,7 +3,7 @@
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
                <select name="delegacion" class="form-control selectpicker" v-model="delegacionActual" >
-                   <option v-for="sucursal in sucursales"  name="sucursal" class="lista" v-bind:value="sucursal.id">
+                   <option v-for="sucursal in sucursales"  name="sucursal" class="lista" v-bind:value="sucursal.id" v-on:click.prevent="busquedaElemento()">
                       @{{ sucursal.nombre_sucursal}}
                     </option>
                 </select>

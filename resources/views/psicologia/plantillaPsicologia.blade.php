@@ -13,8 +13,9 @@
 
     <!-- Styles -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">-->
-    <link rel="stylesheet" href="{{ asset('omar/css/style.default.css') }}" id="theme-stylesheet">
+
 
     @yield('css')
 
@@ -78,6 +79,8 @@
    {!!Html::script('js/bootstrap.js')!!}
    {!!Html::script('js/vue.js')!!}
    {!!Html::script('js/axios.js')!!}
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
    @yield('js')
 
 </body>

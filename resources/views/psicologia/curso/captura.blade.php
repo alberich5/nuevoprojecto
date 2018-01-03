@@ -1,7 +1,7 @@
 @extends('Psicologia.plantillaPsicologia')
 
 @section('css')
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+
 <style>
    #mdialTamanio{
      width: 80% !important;
@@ -10,29 +10,19 @@
 @endsection
 @section('psicologia')
 
-  @include('Psicologia.curso.partials.modalBusqueda')
+
 
 <div id="sucursal">
-
+  @include('Psicologia.curso.partials.modalBusqueda')
   @include('Psicologia.curso.partials.formularioProgramacionLoc')
 
-   <button type="submit" v-on:click.prevent="mostrarModal()" class="btn btn-primary">MOSTRAR</button>
+   <button type="submit" v-on:click.prevent="mostrarModal()" class="btn btn-primary">Agregar Elementos</button>
+
+
 
   @include('Psicologia.curso.partials.tablaElementos')
 
-  <form action="{{ url('buscar') }}" method="GET">
-  {{ csrf_field() }}
-    <div class="form-group">
-           <select name="delegacion" class="form-control selectpicker" v-model="delegacionActual" >
-               <option v-for="sucursal in sucursales"  name="sucursal" class="lista" v-bind:value="sucursal.id">
-                  @{{ sucursal.nombre_sucursal}}
-                </option>
-            </select>
-    </div>
-    <div class="form-group">
-          <button class="btn btn-primary" type="submit" v-on:click.prevent="busquedaElemento()">Buscar</button>
-        </div>
-  </form>
+
 
    <!-- pruebas -->
          <div class="row">
@@ -47,6 +37,8 @@
 
 @endsection
 @section('js')
+
+
 <script>
 	new Vue({
 	el: '#sucursal',
@@ -57,6 +49,7 @@
 	},
 	data: {
 		sucursales: [],
+    total: [],
     programacion: [],
     elementosEncontrados: [],
 		delegacionActual:'',
@@ -86,8 +79,15 @@
     mostrarModal: function() {
       $('#modalbuscar').modal('show');
     },
-    busquedaElemento: function() {
+    totalArreglo: function() {
+      alert("total");
+    },
+    agregarEl: function(elemento) {
 
+        this.total.push(elemento);
+        swal("Agregado Correctamente", "Se agrego bien", "success");
+    },
+    busquedaElemento: function() {
       //var urlBuscarElemento = 'buscarElemento?delegacion=Pinotepa%20Nacional';
       var urlBuscarElemento = 'buscarElemento?delegacion=' + this.delegacionActual;
 			axios.get(urlBuscarElemento).then(response => {
