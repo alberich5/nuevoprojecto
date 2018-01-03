@@ -30,7 +30,7 @@
             </select>
     </div>
     <div class="form-group">
-          <button class="btn btn-primary" type="submit">Buscar</button>
+          <button class="btn btn-primary" type="submit" v-on:click.prevent="busquedaElemento()">Buscar</button>
         </div>
   </form>
 
@@ -87,6 +87,7 @@
       $('#modalbuscar').modal('show');
     },
     busquedaElemento: function() {
+
       //var urlBuscarElemento = 'buscarElemento?delegacion=Pinotepa%20Nacional';
       var urlBuscarElemento = 'buscarElemento?delegacion=' + this.delegacionActual;
 			axios.get(urlBuscarElemento).then(response => {
