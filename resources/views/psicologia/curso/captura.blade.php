@@ -19,8 +19,6 @@
    <button type="submit" v-on:click.prevent="mostrarModal()" class="btn btn-primary">Agregar Elementos</button>
 
 
-   <button type="submit" v-on:click.prevent="totalArreglo()" class="btn btn-primary">Total</button>
-
 
   @include('Psicologia.curso.partials.tablaElementos')
 
@@ -84,13 +82,11 @@
     totalArreglo: function() {
       var totis = this.totalCargado.length;
       this.numero=totis;
-      alert(this.numero);
-
     },
     agregarEl: function(elemento) {
-
         this.totalCargado.push(elemento);
         swal("Agregado Correctamente", "Se agrego bien", "success");
+        this.totalArreglo();
     },
     busquedaElemento: function() {
       //var urlBuscarElemento = 'buscarElemento?delegacion=Pinotepa%20Nacional';
