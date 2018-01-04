@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr v-for="tol in total">
+    <tr v-for="tol in totalCargado">
       <td width="10px">@{{ tol.id }}</td>
       <td><img src="{{ asset('sipab/img/1.png') }}" width="80px"></td>
       <td>@{{ tol.nombre }}</td>

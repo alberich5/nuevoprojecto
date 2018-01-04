@@ -19,6 +19,8 @@
    <button type="submit" v-on:click.prevent="mostrarModal()" class="btn btn-primary">Agregar Elementos</button>
 
 
+   <button type="submit" v-on:click.prevent="totalArreglo()" class="btn btn-primary">Total</button>
+
 
   @include('Psicologia.curso.partials.tablaElementos')
 
@@ -49,13 +51,13 @@
 	},
 	data: {
 		sucursales: [],
-    total: [],
+    totalCargado: [],
     programacion: [],
     elementosEncontrados: [],
 		delegacionActual:'',
     imparte:'',
     fecha:'',
-    numero:''
+    numero:'0'
 	},
 	methods: {
 		mostrarSucursales: function() {
@@ -80,11 +82,14 @@
       $('#modalbuscar').modal('show');
     },
     totalArreglo: function() {
-      alert("total");
+      var totis = this.totalCargado.length;
+      this.numero=totis;
+      alert(this.numero);
+
     },
     agregarEl: function(elemento) {
 
-        this.total.push(elemento);
+        this.totalCargado.push(elemento);
         swal("Agregado Correctamente", "Se agrego bien", "success");
     },
     busquedaElemento: function() {
