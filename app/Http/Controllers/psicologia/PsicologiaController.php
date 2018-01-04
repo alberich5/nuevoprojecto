@@ -106,7 +106,6 @@ class PsicologiaController extends Controller
     ->where('sucursal.id','=', $delegacion)
     ->orderBy('id', 'ASC')->take(15)->get();
 
-
       return $elemento;
   }
 }
