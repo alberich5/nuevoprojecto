@@ -15,7 +15,7 @@
   <tbody>
     <tr v-for="(tol, index) in totalCargado">
       <td width="10px">@{{ tol.id }}</td>
-      <td><img src="{{ asset('sipab/img/1.png') }}" width="80px"></td>
+      <td><img src="{{ asset('img/pruebafoto.jpg') }}" width="80px"></td>
       <td>@{{ tol.nombre }}</td>
       <td>@{{ tol.apellido_paterno }}</td>
       <td>@{{ tol.apellido_materno }}</td>

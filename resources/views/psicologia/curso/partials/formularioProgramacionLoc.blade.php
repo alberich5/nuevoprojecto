@@ -24,7 +24,7 @@
 
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
-              <input type="number" name="numero"  value="{{old('numero')}}" class="form-control" placeholder="Numero de elementos" style="text-transform: uppercase;" v-model="numero">
+              <input type="number" name="numero"  value="{{old('numero')}}" class="form-control" placeholder="Numero de elementos" style="text-transform: uppercase;" v-model="numero"  disabled>
             </div>
   </div>
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

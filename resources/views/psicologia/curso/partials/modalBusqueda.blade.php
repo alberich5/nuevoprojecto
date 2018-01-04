@@ -46,7 +46,7 @@
 				  <tbody>
 				    <tr v-for="elemento in elementosEncontrados">
 				      <td width="10px">@{{ elemento.id }}</td>
-				      <td><img src="{{ asset('sipab/img/1.png') }}" width="80px"></td>
+				      <td><img src="{{ asset('img/pruebafoto.jpg') }}" width="80px"></td>
 				      <td>@{{ elemento.nombre }}</td>
 				      <td>@{{ elemento.apellido_paterno }}</td>
 				      <td>@{{ elemento.apellido_materno }}</td>
