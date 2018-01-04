@@ -4,6 +4,7 @@
 <center><h3>listar Elementos</h3></center>
 
 <div id="sucursal">
+  @include('Psicologia.curso.partials2.mostrarElementos')
   <div class="panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">Programacion Loc</h3>
@@ -30,7 +31,42 @@
 	},
 	data: {
 		elementos: ['elemento1','elemento2','elemento3','elemento4'],
+    pagination: {
+			'total': 0,
+            'current_page': 0,
+            'per_page': 0,
+            'last_page': 0,
+            'from': 0,
+            'to': 0
+		},
     programacion: []
+	},
+  computed: {
+		isActived: function() {
+			return this.pagination.current_page;
+		},
+		pagesNumber: function() {
+			if(!this.pagination.to){
+				return [];
+			}
+
+			var from = this.pagination.current_page - this.offset;
+			if(from < 1){
+				from = 1;
+			}
+
+			var to = from + (this.offset * 2);
+			if(to >= this.pagination.last_page){
+				to = this.pagination.last_page;
+			}
+
+			var pagesArray = [];
+			while(from <= to){
+				pagesArray.push(from);
+				from++;
+			}
+			return pagesArray;
+		}
 	},
 	methods: {
 		mostrarElementos: function() {
@@ -39,12 +75,20 @@
 				this.elementos = response.data
 			});
 		},
-    mostrarProgramacion: function() {
-      var urlprogramacion = 'programacion';
+    mostrarLista: function() {
+			$('#modalmostrar').modal('show');
+		},
+    mostrarProgramacion: function(page) {
+      var urlprogramacion = 'programacion?page='+page;
       axios.get(urlprogramacion).then(response => {
-        this.programacion = response.data
+        this.programacion = response.data.program.data
+        this.pagination = response.data.pagination
       });
-    }
+    },
+    changePage: function(page) {
+			this.pagination.current_page = page;
+			this.mostrarProgramacion(page);
+		}
 	}
 });
 </script>

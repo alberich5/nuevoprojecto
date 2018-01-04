@@ -32,9 +32,19 @@ class PsicologiaController extends Controller
     return view('Psicologia.curso.lista');
   }
 //funcion para traer la informacion de la tabla de programacionLoc
-  public function programacionLoc(){
-    $programacion = Programacionloc::select('id','delegacion_id','fecha','fecha_registro','imparte','numero_elementos')->get();
-    return $programacion;
+  public function programacionLoc(Request $request){
+    $programacion = Programacionloc::select('id','delegacion_id','fecha','fecha_registro','imparte','numero_elementos','activo')->paginate(8);
+    return [
+        'pagination' => [
+            'total'         => $programacion->total(),
+            'current_page'  => $programacion->currentPage(),
+            'per_page'      => $programacion->perPage(),
+            'last_page'     => $programacion->lastPage(),
+            'from'          => $programacion->firstItem(),
+            'to'            => $programacion->lastPage(),
+        ],
+        'program' => $programacion
+    ];
   }
 
   //traer toda la informacion de ElementoPOlicial

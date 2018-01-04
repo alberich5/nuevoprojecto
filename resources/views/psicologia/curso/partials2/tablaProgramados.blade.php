@@ -14,11 +14,33 @@
     <tr v-for="(pro, index) in programacion">
       <td width="10px">@{{ pro.id }}</td>
       <td>@{{ pro.programacion_loc_id }}</td>
-      <td>@{{ pro.numero_elemento }}</td>
+      <td>@{{ pro.numero_elementos }}</td>
       <td>@{{ pro.imparte }}</td>
       <td>@{{ pro.fecha }}</td>
       <td>@{{ pro.activo }}</td>
-      <td><button class="btn btn-info" v-on:click.prevent="quitarEl(index)">Mostrar</button></td>
+      <td><button class="btn btn-info" v-on:click.prevent="mostrarLista()">Mostrar</button></td>
     </tr>
   </tbody>
 </table>
+
+<nav>
+  <ul class="pagination">
+    <li v-if="pagination.current_page > 1">
+      <a href="#" @click.prevent="changePage(pagination.current_page - 1)">
+        Atras
+      </a>
+    </li>
+
+    <li>
+      <a href="#" >
+        1
+      </a>
+    </li>
+
+    <li v-if="pagination.current_page < pagination.last_page">
+      <a href="#" @click.prevent="changePage(pagination.current_page + 1)">
+        Siguiente
+      </a>
+    </li>
+  </ul>
+</nav>
