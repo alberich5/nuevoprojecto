@@ -88,6 +88,12 @@
         swal("Agregado Correctamente", "Se agrego bien", "success");
         this.totalArreglo();
     },
+    quitarEl: function(index) {
+      this.totalCargado.splice(index, 1);
+      swal('Removido...','Se quito elemento','error');
+      this.totalArreglo();
+
+    },
     busquedaElemento: function() {
       //var urlBuscarElemento = 'buscarElemento?delegacion=Pinotepa%20Nacional';
       var urlBuscarElemento = 'buscarElemento?delegacion=' + this.delegacionActual;
