@@ -33,7 +33,7 @@ class PsicologiaController extends Controller
   }
 //funcion para traer la informacion de la tabla de programacionLoc
   public function programacionLoc(){
-    $programacion = Programacionloc::select('id','delegacion_id','fecha','fecha_registro','imparte')->get();
+    $programacion = Programacionloc::select('id','delegacion_id','fecha','fecha_registro','imparte','numero_elementos')->get();
     return $programacion;
   }
 

@@ -92,7 +92,6 @@
       this.totalCargado.splice(index, 1);
       swal('Removido...','Se quito elemento','error');
       this.totalArreglo();
-
     },
     busquedaElemento: function() {
       //var urlBuscarElemento = 'buscarElemento?delegacion=Pinotepa%20Nacional';
