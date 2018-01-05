@@ -31,9 +31,9 @@
       </a>
     </li>
 
-    <li>
-      <a href="#" >
-        1
+    <li v-for="page in pagesNumber" v-bind:class="[ page == isActived ? 'active' : '']">
+      <a href="#" @click.prevent="changePage(page)">
+        @{{ page }}
       </a>
     </li>
 

@@ -12866,7 +12866,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 /*cpolor de las navegacion de los botones*/
 
 .navbar-default .navbar-nav > li > a {
-  color: white;
+  color: #5e5e5e;
   font-size: 1.1em;
 }
 .navbar-default .navbar-nav > li > a:hover,

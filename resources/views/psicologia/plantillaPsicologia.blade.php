@@ -13,6 +13,7 @@
 
     <!-- Styles -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('css/estilo.css')}}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">-->
 
@@ -21,7 +22,7 @@
 
    </head>
 <body>
-    <div id="app">
+    <div id="app" id="color">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -58,7 +59,7 @@
             </div>
         </nav>
 
-<div class="container">
+<div class="container" id="contenedor">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
