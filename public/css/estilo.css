@@ -4,3 +4,7 @@
 #contenedor{
   width: 95%;
 }
+
+#mdialTamanio{
+  width: 80% !important;
+}

@@ -30,7 +30,7 @@
     this.mostrarProgramacion();
 	},
 	data: {
-		elementos: ['elemento1','elemento2','elemento3','elemento4'],
+		filtro: [],
     pagination: {
 			'total': 0,
             'current_page': 0,
@@ -76,6 +76,10 @@
 			});
 		},
     mostrarLista: function() {
+      var urlMostrarfiltro = 'filtro';
+			axios.get(urlMostrarfiltro).then(response => {
+				this.filtro = response.data
+			});
 			$('#modalmostrar').modal('show');
 		},
     mostrarProgramacion: function(page) {

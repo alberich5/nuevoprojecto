@@ -18,7 +18,7 @@
       <td>@{{ pro.imparte }}</td>
       <td>@{{ pro.fecha }}</td>
       <td>@{{ pro.activo }}</td>
-      <td><button class="btn btn-info" v-on:click.prevent="mostrarLista()">Mostrar</button></td>
+      <td><button class="btn btn-info" v-on:click.prevent="mostrarLista(pro)">Mostrar</button></td>
     </tr>
   </tbody>
 </table>
