@@ -62,10 +62,11 @@ class PsicologiaController extends Controller
   }
 
   //Traer la informacion de los id de los elemnto ya selecionados
-   public function filtroElemento()
+   public function filtroElemento(Request $request)
   {
+    $id=$request->get('id');
     $elemento_policial = ElementoPolicialProgramacion::select('id','activo','elemento_policial_id','fecha_registro','programacion_loc_id')
-    ->where('programacion_loc_id', 5)
+    ->where('programacion_loc_id', $id)
     ->get();
     return $elemento_policial;
   }

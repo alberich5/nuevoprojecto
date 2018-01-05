@@ -75,8 +75,9 @@
 				this.elementos = response.data
 			});
 		},
-    mostrarLista: function() {
-      var urlMostrarfiltro = 'filtro';
+    mostrarLista: function(pro) {
+      var fil  = pro.id;
+      var urlMostrarfiltro = 'filtro?id='+fil;
 			axios.get(urlMostrarfiltro).then(response => {
 				this.filtro = response.data
 			});

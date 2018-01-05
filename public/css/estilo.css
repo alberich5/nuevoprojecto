@@ -3,8 +3,18 @@
 }
 #contenedor{
   width: 95%;
+  margin-top: 2%;
+
 }
 
 #mdialTamanio{
   width: 80% !important;
+}
+#colorcuerpo{
+  background-color: #03134D;
+
+}
+#estilocaptura{
+  box-shadow: 2px 3px 5px 13px rgba(250,247,250,0.42);
+  border-radius: 10px;
 }

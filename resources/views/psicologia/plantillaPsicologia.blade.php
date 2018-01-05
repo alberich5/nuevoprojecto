@@ -21,7 +21,7 @@
     @yield('css')
 
    </head>
-<body>
+<body id="colorcuerpo">
     <div id="app" id="color">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -62,7 +62,7 @@
 <div class="container" id="contenedor">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+            <div class="panel panel-default" id="estilocaptura">
            <center><h2>Welcome Psicologia</h2></center>
 
                 @yield('psicologia')
