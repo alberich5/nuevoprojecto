@@ -70,6 +70,7 @@ Route::post('guardar2', 'psicologia\PsicologiaController@guardar2');
 Route::get('buscar',['uses'=>'psicologia\PsicologiaController@buscarElementos']);
 
 Route::get('filtro',['uses'=>'psicologia\PsicologiaController@filtroElemento']);
+Route::get('filtroprueba',['uses'=>'psicologia\PsicologiaController@filtroElemento2']);
 
 
 //rutas nuevas de Psicologia

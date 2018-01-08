@@ -12,19 +12,28 @@
         <thead>
           <tr>
             <th scope="col">Id</th>
-            <th scope="col">id_elemento</th>
-            <th scope="col">Activo</th>
-            <th scope="col">Fecha Registro</th>
-            <th scope="col">ProgramacionLoc</th>
+            <th scope="col">Fotografia</th>
+            <th scope="col">nombre</th>
+            <th scope="col">Apellido Paterno</th>
+            <th scope="col">Apellido Materno</th>
+						<th scope="col">RFC</th>
+						<th scope="col">Genero</th>
+						<th scope="col">Domicilio</th>
+						<th scope="col">Fecha de Naciemiento</th>
+						<th scope="col">Edad</th>
           </tr>
         </thead>
         <tbody>
           <tr  v-for="fil in filtro">
-            <th scope="row">@{{ fil.id }}</th>
-            <td>@{{ fil.elemento_policial_id }}</td>
-            <td>@{{ fil.activo }}</td>
-            <td>@{{ fil.fecha_registro }}</td>
-            <td>@{{ fil.programacion_loc_id }}</td>
+            <th scope="row">@{{ fil.id_elemento_policial }}</th>
+						<td><img src="{{ asset('img/pruebafoto.jpg') }}" width="80px"></td>
+						<td>@{{ fil.nombre }}</td>
+            <td>@{{ fil.apellido_paterno }}</td>
+            <td>@{{ fil.apellido_materno }}</td>
+            <td>@{{ fil.rfc }}</td>
+            <td>@{{ fil.genero }}</td>
+						<td>@{{ fil.calle }}</td>
+						<td>@{{ fil.fecha_nacimiento }}</td>
           </tr>
         </tbody>
       </table>

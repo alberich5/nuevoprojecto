@@ -5,9 +5,10 @@
 
 <div id="sucursal">
   @include('Psicologia.curso.partials2.mostrarElementos')
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">Programacion Loc</h3>
+  <div class="panel panel-primary" >
+    <div class="panel-heading" id="colorpanel"><center>
+      <h3 class="panel-title" >Programacion Loc</h3>
+    </center>
     </div>
     <div class="panel-body">
       @include('Psicologia.curso.partials2.tablaProgramados')

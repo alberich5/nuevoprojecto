@@ -9,6 +9,7 @@ use App\elemento_policial;
 use App\Persona_fisica;
 use App\Dato_personal;
 use App\Sucursal;
+use App\Direccion;
 use App\Sucursal_historico;
 use App\Programacionloc;
 use App\ElementoPolicialProgramacion;
@@ -65,11 +66,32 @@ class PsicologiaController extends Controller
    public function filtroElemento(Request $request)
   {
     $id=$request->get('id');
-    $elemento_policial = ElementoPolicialProgramacion::select('id','activo','elemento_policial_id','fecha_registro','programacion_loc_id')
-    ->where('programacion_loc_id', $id)
-    ->get();
+    $elemento_policial = elemento_policial::leftjoin('persona_fisica', 'elemento_policial.persona_fisica_id', '=', 'persona_fisica.id')
+            ->leftjoin('dato_personal', 'persona_fisica.dato_personal_id', '=', 'dato_personal.id')
+            ->leftjoin('elemento_policial_programacion_loc', 'elemento_policial.id', '=', 'elemento_policial_programacion_loc.elemento_policial_id')
+            ->leftjoin('persona_fisica_direccion', 'persona_fisica_direcciones_id', '=', 'persona_fisica.id')
+            ->leftjoin('direccion', 'persona_fisica_direccion.direccion_id', '=', 'direccion.id')
+            ->where('elemento_policial_programacion_loc.programacion_loc_id','=', $id)
+            ->select('elemento_policial.id as id_elemento_policial','dato_personal.nombre','dato_personal.apellido_paterno','dato_personal.apellido_materno','dato_personal.estado_civil','dato_personal.fecha_nacimiento','dato_personal.genero','dato_personal.rfc','direccion.calle' )
+             ->get();
     return $elemento_policial;
   }
+
+  public function filtroElemento2(Request $request)
+ {
+   //funcion para hacer mis pruebas
+   $fina=elemento_policial::leftjoin('persona_fisica', 'elemento_policial.persona_fisica_id', '=', 'persona_fisica.id')
+           ->leftjoin('dato_personal', 'persona_fisica.dato_personal_id', '=', 'dato_personal.id')
+           ->leftjoin('elemento_policial_programacion_loc', 'elemento_policial.id', '=', 'elemento_policial_programacion_loc.elemento_policial_id')
+           ->leftjoin('persona_fisica_direccion', 'persona_fisica_direcciones_id', '=', 'persona_fisica.id')
+           ->leftjoin('direccion', 'persona_fisica_direccion.direccion_id', '=', 'direccion.id')
+           ->where('elemento_policial_programacion_loc.programacion_loc_id','=', $id)
+           ->select('elemento_policial.id as id_elemento_policial','dato_personal.nombre','dato_personal.apellido_paterno','dato_personal.apellido_materno','dato_personal.estado_civil','dato_personal.fecha_nacimiento','dato_personal.genero','direccion.calle' )
+            ->get();
+
+
+            return $elemento_policial;
+ }
 
 //funcion para guardar la informacion que se traer del formulario y la tabla Programacion Loc
   public function guardar (Request $request)

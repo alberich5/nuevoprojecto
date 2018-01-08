@@ -4,9 +4,11 @@
 #contenedor{
   width: 97%;
   margin-top: 2%;
-
 }
 
+#colorpanel{
+  background-color: #031040 !important;
+}
 #mdialTamanio{
   width: 80% !important;
 }
@@ -17,4 +19,5 @@
 #estilocaptura{
   box-shadow: 2px 3px 5px 13px rgba(250,247,250,0.42);
   border-radius: 10px;
+  width: 101%;
 }
