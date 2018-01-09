@@ -85,12 +85,12 @@ class PsicologiaController extends Controller
            ->leftjoin('elemento_policial_programacion_loc', 'elemento_policial.id', '=', 'elemento_policial_programacion_loc.elemento_policial_id')
            ->leftjoin('persona_fisica_direccion', 'persona_fisica_direcciones_id', '=', 'persona_fisica.id')
            ->leftjoin('direccion', 'persona_fisica_direccion.direccion_id', '=', 'direccion.id')
-           ->where('elemento_policial_programacion_loc.programacion_loc_id','=', $id)
-           ->select('elemento_policial.id as id_elemento_policial','dato_personal.nombre','dato_personal.apellido_paterno','dato_personal.apellido_materno','dato_personal.estado_civil','dato_personal.fecha_nacimiento','dato_personal.genero','direccion.calle' )
+           ->where('elemento_policial_programacion_loc.programacion_loc_id','=', 5)
+           ->select('elemento_policial.id as id_elemento_policial','dato_personal.nombre','dato_personal.apellido_paterno','dato_personal.apellido_materno','dato_personal.estado_civil','dato_personal.fecha_nacimiento','dato_personal.genero','dato_personal.rfc','direccion.calle' )
             ->get();
 
 
-            return $elemento_policial;
+            return $fina;
  }
 
 //funcion para guardar la informacion que se traer del formulario y la tabla Programacion Loc
