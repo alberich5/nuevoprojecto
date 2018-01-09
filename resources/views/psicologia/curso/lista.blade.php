@@ -1,7 +1,7 @@
 @extends('Psicologia.plantillaPsicologia')
 
 @section('psicologia')
-<center><h3>listar Elementos</h3></center>
+<center><h3 id="colorTitles">listar Elementos</h3></center>
 
 <div id="sucursal">
   @include('Psicologia.curso.partials2.mostrarElementos')

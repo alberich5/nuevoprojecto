@@ -20,4 +20,14 @@
   box-shadow: 2px 3px 5px 13px rgba(250,247,250,0.42);
   border-radius: 10px;
   width: 101%;
+  background: #031040;
+}
+
+#colorTitles{
+  color: white;
+}
+#tablacaptura{
+background-color: #F4F4F4;
+border-radius: 5px;
+height: 100px;
 }

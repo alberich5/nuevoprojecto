@@ -61,9 +61,9 @@
 
 <div class="container" id="contenedor">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-2" >
             <div class="panel panel-default" id="estilocaptura">
-           <center><h2>Welcome Psicologia</h2></center>
+           <center><h2 id="colorTitles">Welcome Psicologia</h2></center>
 
                 @yield('psicologia')
             </div>

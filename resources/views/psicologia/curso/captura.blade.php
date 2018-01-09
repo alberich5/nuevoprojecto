@@ -19,8 +19,11 @@
    <button type="submit" v-on:click.prevent="mostrarModal()" class="btn btn-primary">Agregar Elementos</button>
 
 
-
+<div id="tablacaptura">
   @include('Psicologia.curso.partials.tablaElementos')
+</div>
+
+
 
 
 
