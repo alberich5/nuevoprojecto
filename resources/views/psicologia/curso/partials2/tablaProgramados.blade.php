@@ -13,7 +13,7 @@
   <tbody>
     <tr v-for="(pro, index) in programacion">
       <td width="10px">@{{ pro.id }}</td>
-      <td>@{{ pro.delegacion_id }}</td>
+      <td>@{{ pro.nombre_sucursal }}</td>
       <td>@{{ pro.numero_elementos }}</td>
       <td>@{{ pro.imparte }}</td>
       <td>@{{ pro.fecha }}</td>

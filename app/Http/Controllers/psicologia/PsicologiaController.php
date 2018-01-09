@@ -34,7 +34,10 @@ class PsicologiaController extends Controller
   }
 //funcion para traer la informacion de la tabla de programacionLoc
   public function programacionLoc(Request $request){
-    $programacion = Programacionloc::select('id','delegacion_id','fecha','fecha_registro','imparte','numero_elementos','activo')->paginate(8);
+    $programacion = Programacionloc::leftjoin('sucursal', 'programacion_loc.delegacion_id', '=', 'sucursal.id')
+    ->select('programacion_loc.id','programacion_loc.version','programacion_loc.delegacion_id','programacion_loc.fecha','programacion_loc.fecha_registro','programacion_loc.numero_elementos','programacion_loc.imparte','programacion_loc.activo','sucursal.nombre_sucursal')
+    ->where('programacion_loc.version','=', 0)
+    ->paginate(8);
     return [
         'pagination' => [
             'total'         => $programacion->total(),
@@ -77,9 +80,13 @@ class PsicologiaController extends Controller
     return $elemento_policial;
   }
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//funcion para hacer pruebas a las consultas que se van a insertar a la tablas
+
   public function filtroElemento2(Request $request)
  {
-   //funcion para hacer mis pruebas
+
    $fina=elemento_policial::leftjoin('persona_fisica', 'elemento_policial.persona_fisica_id', '=', 'persona_fisica.id')
            ->leftjoin('dato_personal', 'persona_fisica.dato_personal_id', '=', 'dato_personal.id')
            ->leftjoin('elemento_policial_programacion_loc', 'elemento_policial.id', '=', 'elemento_policial_programacion_loc.elemento_policial_id')
@@ -90,8 +97,19 @@ class PsicologiaController extends Controller
             ->get();
 
 
-            return $fina;
+              $programacion = Programacionloc::leftjoin('sucursal', 'programacion_loc.delegacion_id', '=', 'sucursal.id')
+              ->select('programacion_loc.id','programacion_loc.version','programacion_loc.delegacion_id','programacion_loc.fecha','programacion_loc.fecha_registro','programacion_loc.numero_elementos','programacion_loc.imparte','programacion_loc.activo','sucursal.nombre_sucursal')
+              ->where('programacion_loc.version','=', 0)
+              ->get();
+
+            return $programacion;
  }
+ //fin de la funcion de pruebas
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
 //funcion para guardar la informacion que se traer del formulario y la tabla Programacion Loc
   public function guardar (Request $request)
