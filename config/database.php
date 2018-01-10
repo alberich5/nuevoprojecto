@@ -66,6 +66,18 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
+        'pgsqlmio' => [
+            'driver' => 'pgsql',
+            'host' => env('DB_HOST1', '127.0.0.1'),
+            'port' => env('DB_PORT1', '5432'),
+            'database' => env('DB_DATABASE1', 'forge'),
+            'username' => env('DB_USERNAME1', 'forge'),
+            'password' => env('DB_PASSWORD1', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
