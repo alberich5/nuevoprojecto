@@ -16,12 +16,12 @@ class UsuarioController extends Controller
      *
      * @return void
      */
-    
+
 
     public function __construct()
     {
       //  $this->middleware('cerrar');
-  
+
         $this->middleware('auth');
     }
 
@@ -29,7 +29,7 @@ class UsuarioController extends Controller
 
        //  $usuarios = User::find(Auth::user()->id);
       $usuarios= User::all();
-       
+
         return $usuarios;
     }
 
@@ -116,7 +116,7 @@ class UsuarioController extends Controller
         $usuario=User::findOrFail($id);
         $usuario->bloqueado='true';
         $usuario->save();
-       
+
     }
 
      /**
@@ -127,11 +127,11 @@ class UsuarioController extends Controller
      */
     public function searchUsuario(Request $request)
     {
-        
+
         return $request['usuario']['nombre'];
 
 
         //falta hacer la consulta para sacar lso usuarios
-        
+
     }
 }
